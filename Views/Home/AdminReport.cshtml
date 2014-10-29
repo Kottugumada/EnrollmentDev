@@ -1,0 +1,75 @@
+﻿@model IEnumerable<OMAPDev.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Report";
+}
+
+<h2>Admin Report</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarkettingManager)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalInfo)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.Self)
+            </th>*@
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumpStart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MarkettingManager)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdditionalInfo)
+            </td>
+
+
+            @*<td>
+                    @Html.DisplayFor(modelItem => item.Self)
+                </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EnrollmentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EnrollmentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EnrollmentId })
+            </td>
+        </tr>
+    }
+
+</table>

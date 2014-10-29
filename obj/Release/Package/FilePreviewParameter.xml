@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="omap-dev" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\v-kartk\\Desktop\\OMAPDev\\OMAPDev\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\v-kartk\\Desktop\\OMAPDev\\OMAPDev\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="OMAPDevContext-Web.config Connection String" description="" value="Data Source=tcp:r6lkqzkraw.database.windows.net,1433;Initial Catalog=omapdevA6iJeLyyz;User Id=OMAPAdmin@r6lkqzkraw;Password=OMAP@2014" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\v-kartk\\Desktop\\OMAPDev\\OMAPDev\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OMAPDevContext']/@connectionString" />
+  </parameter>
+</parameters>

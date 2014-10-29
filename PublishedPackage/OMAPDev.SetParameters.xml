@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="OMAPDev" />
+  <setParameter name="OMAPDevContext-Web.config Connection String" value="Data Source=tcp:vekhnvl0gz.database.windows.net,1433;Initial Catalog=OMAPDevDatabase;User ID=OMAPAdmin@vekhnvl0gz;Password=OMAP@2014" />
+  <setParameter name="OMAPDevContext_DatabasePublish-Web.config Connection String" value="Data Source=tcp:vekhnvl0gz.database.windows.net,1433;Initial Catalog=OMAPDevDatabase;User ID=OMAPAdmin@vekhnvl0gz;Password=OMAP@2014" />
+</parameters>

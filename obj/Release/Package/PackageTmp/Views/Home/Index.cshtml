@@ -1,0 +1,112 @@
+﻿@model IEnumerable<OMAPDev.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div>&nbsp; </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Welcome to the Microsoft OEM Marketing Asset Portal</h3>
+    </div>
+    <div class="panel-body">
+        If this is the first time you have visited to the OEM Marketing Assets Portal (OMAP), click <b>Enroll</b>. You will be asked to complete a short form.
+         We will respond to your request within three business days.
+        <br />
+        <br />
+        If you are an existing user of this portal, click <b>Sign in</b>.
+    </div>
+    <div style="TEXT-ALIGN: center">
+
+        <a href="@Url.Action("Create", "Home")">
+            <img style="MARGIN: 5px" alt="" src="~/Images/enroll_200x90.png">
+        </a>
+    </div>
+    <div style="TEXT-ALIGN: center">
+        <a href="https://msassets.marketing.dynamics.com/">
+            <img style="MARGIN: 5px" alt="" src="~/Images/Sign_in_200x90.png">
+        </a>        
+    </div>
+    &nbsp;&nbsp;&nbsp; <a href="http://oem.microsoft.com/Public/OEMMarketingAssetsPortal/OEMElementsMgrtnPrtnrTnngRcrdng.mp4">
+        OMAP Training Module
+    </a>
+    <br /><br />
+    <p>
+        &nbsp;&nbsp;&nbsp;For troubleshooting information see the
+        <a href="http://oem.microsoft.com/public/OEMMarketingAssetsPortal/OEM_Marketing_Asset_Portal_FAQ.pdf">
+            Frequently Asked Questions
+        </a> page, or contact the
+        <a href="mailto:omaps@microsoft.com">
+            Customer Care team
+        </a>
+    </p>
+</div>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JumpStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarkettingManager)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdditionalInfo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Self)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JumpStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarkettingManager)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdditionalInfo)
+        </td>
+
+      
+        @*<td>
+            @Html.DisplayFor(modelItem => item.Self)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EnrollmentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EnrollmentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EnrollmentId })
+        </td>
+    </tr>
+}
+
+</table>*@

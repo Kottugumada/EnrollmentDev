@@ -1,0 +1,44 @@
+﻿@model IEnumerable<OMAPDev.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div>&nbsp; </div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Welcome to the Microsoft OEM Marketing Asset Portal</h3>
+    </div>
+    <div class="panel-body">
+        If this is the first time you have visited to the OEM Marketing Assets Portal (OMAP), click <b>Enroll</b>. You will be asked to complete a short form.
+         We will respond to your request within three business days.
+        <br />
+        <br />
+        If you are an existing user of this portal, click <b>Sign in</b>.
+    </div>
+    <div style="TEXT-ALIGN: center">
+
+        <a href="@Url.Action("Create", "Home")">
+            <img style="MARGIN: 5px" alt="" src="~/Images/enroll_200x90.png">
+        </a>
+    </div>
+    <div style="TEXT-ALIGN: center">
+        <a href="https://msassets.marketing.dynamics.com/">
+            <img style="MARGIN: 5px" alt="" src="~/Images/Sign_in_200x90.png">
+        </a>        
+    </div>
+    &nbsp;&nbsp;&nbsp; <a href="http://oem.microsoft.com/Public/OEMMarketingAssetsPortal/OEMElementsMgrtnPrtnrTnngRcrdng.mp4">
+        OMAP Training Module
+    </a>
+    <br /><br />
+    <p>
+        &nbsp;&nbsp;&nbsp;For troubleshooting information see the
+        <a href="http://oem.microsoft.com/public/OEMMarketingAssetsPortal/OEM_Marketing_Asset_Portal_FAQ.pdf">
+            Frequently Asked Questions
+        </a> page, or contact the
+        <a href="mailto:omaps@microsoft.com">
+            Customer Care team
+        </a>
+    </p>
+</div>
+
+

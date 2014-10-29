@@ -1,0 +1,153 @@
+﻿@model OMAPDev.Models.Enrollment
+
+@{
+    ViewBag.Title = "Enrollment";
+}
+
+@*<h2>Enrollment</h2>*@
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h1>OMAP Enrollment</h1>
+     
+        @Html.ValidationSummary(true)
+        <label class="text-primary">Required fields are marked with an asterisk (*)</label> 
+        <form class="form-horizontal">
+            <div class="form-group">
+                  <div class="col-md-10">
+                    <label class="control-label col-md-2">First Name *&nbsp;</label>
+                    @Html.EditorFor(model => model.FirstName, new { @class = "form-control col-md-2" })
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.LastName, new { @class = "control-label col-md-2" })*@
+
+                <div class="col-md-10">
+                    <label class="control-label col-md-2">Last Name *&nbsp;</label>
+                    @Html.EditorFor(model => model.LastName, new { @class = "form-control col-md-2" })
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.CompanyName, new { @class = "control-label col-md-2" })*@
+
+                <div class="col-md-10">
+                    <label class="control-label col-md-2">Your Company Name *&nbsp;</label>
+                    @Html.EditorFor(model => model.CompanyName, new { @class = "form-control col-md-2" })
+                    @Html.ValidationMessageFor(model => model.CompanyName)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.Email, new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    <label class="control-label col-md-2">Company Email Address *&nbsp;</label>
+                    @Html.EditorFor(model => model.Email, new { @class = "form-control col-md-2" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label>
+                    Is your company a member of the Jumpstart program?
+                </label>
+                <input name="isJump" type="radio" value="1" onclick="showhidediv(this);" />Yes
+                <input name="isJump" type="radio" value="2" onclick="showhidediv(this);" />No<br>
+                <div class="col-md-10">
+
+                </div>
+                <div id="jumptext" class="control-group" style="display:none;">
+                    <label>Jumpstart/MDA OEM Partner Account You Are Associated With *&nbsp;</label>
+                    @Html.EditorFor(model => model.JumpStart, new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.JumpStart)
+                    @*<input class="form-control">*@
+                </div>
+            </div> <br />
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.MarkettingManager, new { @class = "control-label col-md-2" })*@
+               
+                <div class="col-md-10">
+                    <label class="control-label col-md-2">OEM Microsoft Account Marketing Manager *&nbsp;</label>
+                    @Html.EditorFor(model => model.MarkettingManager, new { @class = "control-label col-md-2" })
+                    @Html.ValidationMessageFor(model => model.MarkettingManager)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*@Html.LabelFor(model => model.AdditionalInfo, new { @class = "control-label col-md-2" })*@
+                @*<label class="control-label" for="message">Additional Information (optional)</label>*@
+                <div class="col-md-10">
+                    @*@Html.EditorFor(model => model.AdditionalInfo)*@
+                    <label class="control-label col-md-2">Additional Information (optional)</label>
+                    @Html.TextAreaFor(model => model.AdditionalInfo, new { @class = "form-control col-md-2" })
+                    @Html.ValidationMessageFor(model => model.AdditionalInfo)
+                </div>
+            </div>
+            <div class="form-group">
+                <label>
+                    I accept the terms and conditions of the
+                    <a href="http://oem.microsoft.com/public/OEMMarketingAssetsPortal/OMAP_End_User_Licensing_Agreement.pdf">
+                        End User Licensing Agreement
+                    </a> (Yes or No)?
+                </label>
+                <div class="controls">
+                    <!-- <label class="radio-inline"> -->
+                    @*@Html.RadioButtonFor(model => model.EULA, new { @class = "form-control col-md-2" })*@
+                    @Html.RadioButtonFor(model => model.IsEULA, "EULAYes") Yes  
+                    @Html.RadioButtonFor(model => model.IsEULA, "EULANo") No
+                   
+                    @*<input type="radio" name="optionsRadiosInline" id="EULAYes" value="EULAYes" checked="checked"> Yes*@
+                    <!-- </label>
+                <label class="radio-inline"> 
+                    <input type="radio" name="optionsRadiosInline" id="EULANo" value="EULANo"> No
+                    <!-- </label> -->
+                </div>
+            </div>
+            @*<div class="form-group">
+
+                <div class="controls">
+                    @Html.Label("I accept the terms and conditions of the")
+                    <a href="http://oem.microsoft.com/public/OEMMarketingAssetsPortal/OMAP_End_User_Licensing_Agreement.pdf">End User Licensing Agreement </a>
+                    @Html.Label("(Yes or No)?")<br />
+                    @Html.RadioButton("tc", "Yes", false, new { onclick = "showhidebtn(this);" }) Yes
+                    @Html.RadioButton("tc", "No", true, new { onclick = "showhidebtn(this);" }) No
+
+                </div>
+            </div>*@
+       @*@{
+            var EULAYes = Model.IsEULA ? new { @checked = "checked" } : null;
+            var EULANo = Model.IsEULA ? null : new { @checked = "checked" };          
+         }*@
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                 <input type="submit" value="Enroll" class="btn btn-default" />
+                </div>
+            </div>
+        </form>
+</div>
+    
+}
+
+@*<div>
+    @Html.ActionLink("Back to Home", "Index")
+</div>*@
+<script language="JavaScript" type="text/javascript">
+    function showhidediv(rad) {
+        var rads = document.getElementsByName(rad.name);
+        document.getElementById('jumptext').style.display = (rads[0].checked) ? 'block' : 'none';
+    }
+    //function showhidebtn(rad) {
+    //    var rads = document.getElementsByName(rad.name);
+    //    document.getElementById('btnsubmit').isDisabled = (rads[0].checked) ? false : true;
+    //}
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
